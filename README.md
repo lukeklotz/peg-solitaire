@@ -1,6 +1,6 @@
 
 
-🧠 Peg Solitaire in React
+#🧠 Peg Solitaire in React
 I recently played Peg Solitaire and thought it would be fun to make a version of the game in react, so here we are!
 
 Goal: Remove all but one peg from the board.
