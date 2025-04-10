@@ -5,7 +5,7 @@ I recently played Peg Solitaire and thought it would be fun to make a version of
 
 ## Goal: Remove all but one peg from the board.
 
-## Captures are made by jumping a peg over another. Moves are only allowed if you can capture on that move.
+Captures are made by jumping a peg over another. Moves are only allowed if you can capture on that move.
 
 # 🚧 TODOs & Future Plans:
 ## ❌ Fix movement logic
