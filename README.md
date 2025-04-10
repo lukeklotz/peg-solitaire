@@ -18,4 +18,4 @@ When no more moves are possible, let the user know and offer a restart.
 The UI is... functional.
 
 ## 🏆 Leaderboard
-Wouldn't it be cool to track top scores? Planning to hook up a database to show off those Peg Masters.
+I want to implement a database that shows who's completed the game. 
