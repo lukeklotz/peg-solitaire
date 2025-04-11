@@ -10,19 +10,19 @@ let captured = {
   col: null
 };
 
-const GameBoard = () => {
-  const size = 5;
+const GameBoard = ({board_size}) => {
   const [board, setBoard] = useState([]);
   const dragStartRef = useRef(null);
 
   useEffect(() => {
-    const game_board = Array.from({ length: size }, (_, rowIndex) => {
-      return Array.from({ length: size }, (_, colIndex) => ({
+    const game_board = Array.from({ length: board_size }, (_, rowIndex) => {
+      return Array.from({ length: board_size }, (_, colIndex) => ({
         filled: !(rowIndex === 2 && colIndex === 2) // center is empty
       }));
     });
+    console.log(board_size);
     setBoard(game_board);
-  }, []);
+  }, [board_size]);
 
   function isValidMove(fromRow, fromCol, destRow, destCol) {
     //check if move is 2 spaces and hops another peice
@@ -85,7 +85,7 @@ const GameBoard = () => {
                 !newBoard[row_index][col_index].filled &&
 
                 //checks to see if move is 2 spaces away from current position
-                isValidMove(from.row, from.col, row_index, col_index, size)
+                isValidMove(from.row, from.col, row_index, col_index)
               ) {
                 newBoard[from.row][from.col].filled = false;
                 newBoard[captured.row][captured.col] = false;
@@ -116,6 +116,12 @@ const GameBoard = () => {
   );
 };
 
+/*
+const Counter = (board_size) => {
+  const [count, setCount] = useState((board_size * board_size) - 1);
+}
+*/
+
 function Title() {
   return(
     <div 
@@ -128,7 +134,7 @@ function Title() {
 root.render(
   <React.StrictMode>
     <Title />
-    <GameBoard />
+    <GameBoard board_size = {5}/>
   </React.StrictMode>
 );
 
